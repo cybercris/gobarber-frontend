@@ -1,6 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="GoStack" src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/bootcamp-header.png" width="200px" />
+</h1>
 
-## Available Scripts
+<h3 align="center">
+  GoBarber - Application developed during ReactJs course
+</h3>
+
+<h3 align="center">
+  #rocketseat, #react, #reactjs, #styled-components, #redux, #redux-sagas
+</h3>
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rocketseat/bootcamp-gostack-desafio-01?color=%2304D361">
+
+  <a href="https://rocketseat.com.br">
+    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%2304D361">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
+</p>
+
+<p align="center">
+  <a href="#rocket-about">About</a>&nbsp;&nbsp;&nbsp;
+</p>
+
+## :rocket: About
+
+Rocketseat application in GoStack 8.0 Advanced Reactjs module.
+Basically this app manages an Barber where users makes appointments and this notifys providers.
+
+## :books: Librarys used
+
+- styled-components
+
+## :arrow_forward: Available Scripts
 
 In the project directory, you can run:
 
@@ -66,3 +99,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## :iphone: Contact
+
+[LinkedIn](https://www.linkedin.com/in/cristiano-soares-b46928192/)
+
+Email: cristiano.adlim@gmail.com

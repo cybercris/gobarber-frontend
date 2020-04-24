@@ -29,7 +29,7 @@
 Rocketseat application in GoStack 8.0 Advanced Reactjs module.
 Basically this app manages an Barber where users makes appointments and this notifys providers.
 
-## :octocat: Features
+## :space_invader: Features
 This app features all the latest tools and practices in web development!
 - ⚛ **React** — A library to build user interfaces
 - ♻ **Redux with Redux Saga** — State management with middleware

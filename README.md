@@ -30,16 +30,20 @@ Rocketseat application in GoStack 8.0 Advanced Reactjs module.
 Basically this app manages an Barber where users makes appointments and this notifys providers.
 
 ## :space_invader: Features
+
 This app features all the latest tools and practices in web development!
+
 - ⚛ **React** — A library to build user interfaces
 - ♻ **Redux with Redux Saga** — State management with middleware
 - 💅 **CSS** — styled-components
 - 🌸 **Reactotron** - Helps debugging process
 - 💖 **Lint** — ESlint/Prettier/Editor Config
+- 🌌 **Formik with Yup** — Handle input validation
 
 ## :arrow_forward: Getting started
 
 Before you run this application you need to make sure the server is running!.
+
 1. Clone this repo using `https://github.com/cyberCris/gobarber-frontend.git`
 2. Move to the appropriate directory: `cd gobarber-frontend`.<br />
 3. Run `yarn` to install dependencies.<br />

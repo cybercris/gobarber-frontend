@@ -1,16 +1,57 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import logo from '~/assets/logo.svg';
 
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .email('Insira um email válido')
+    .required('O e-mail é obrigatório'),
+  password: Yup.string().required('A senha é obrigatória'),
+});
+
 export default function SignIn() {
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: schema,
+    onSubmit: (values) => {
+      console.tron.log(values);
+    },
+  });
   return (
     <>
       <img src={logo} alt="GoBarber" />
 
-      <form>
-        <input type="email" placeholder="Seu e-mail" name="" id="" />
-        <input type="password" placeholder="Sua senha secreta" name="" id="" />
+      <form onSubmit={formik.handleSubmit} autoComplete="off">
+        <input
+          type="email"
+          placeholder="Seu e-mail"
+          name="email"
+          id="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        {formik.errors.email && formik.touched.email && (
+          <p>{formik.errors.email}</p>
+        )}
+        <input
+          type="password"
+          placeholder="Sua senha secreta"
+          name="password"
+          id="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        {formik.errors.password && formik.touched.password && (
+          <p>{formik.errors.password}</p>
+        )}
         <button type="submit">Acessar</button>
         <Link to="/register">Criar conta gratuita</Link>
       </form>

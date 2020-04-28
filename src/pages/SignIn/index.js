@@ -25,7 +25,7 @@ export default function SignIn() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      // console.tron.log(values);
+      console.tron.log(values);
 
       dispatch(signInRequest(values.email, values.password));
     },

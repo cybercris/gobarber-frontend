@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 import logo from '~/assets/logo.svg';
 
@@ -16,6 +19,8 @@ const schema = Yup.object().shape({
 });
 
 export default function SignUp() {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -24,9 +29,10 @@ export default function SignUp() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      console.tron.log(values);
+      dispatch(signUpRequest(values.name, values.email, values.password));
     },
   });
+
   return (
     <>
       <img src={logo} alt="GoBarber" />

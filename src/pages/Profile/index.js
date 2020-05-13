@@ -1,20 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 // import * as Yup from 'yup';
+
+import { updateProfileRequest } from '~/store/modules/user/actions';
 
 import { Container } from './styles';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const profile = useSelector((state) => state.user.profile);
 
   const formik = useFormik({
     initialValues: {
       name: profile.name,
       email: profile.email,
+      oldPassword: '',
+      password: '',
+      confirmPassword: '',
     },
     onSubmit: (values) => {
-      console.log(values);
+      dispatch(updateProfileRequest(values));
     },
   });
 
@@ -39,12 +45,22 @@ export default function Profile() {
           name="oldPassword"
           type="password"
           placeholder="Sua senha atual"
+          value={formik.values.oldPassword}
+          onChange={formik.handleChange}
         />
-        <input name="password" type="password" placeholder="Nova senha" />
+        <input
+          name="password"
+          type="password"
+          placeholder="Nova senha"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+        />
         <input
           name="confirmPassword"
           type="password"
           placeholder="Confirmação de senha"
+          value={formik.values.confirmPassword}
+          onChange={formik.handleChange}
         />
 
         <button type="submit">Atualizar Perfil</button>

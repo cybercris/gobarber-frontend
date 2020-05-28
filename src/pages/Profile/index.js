@@ -5,6 +5,8 @@ import { useFormik } from 'formik';
 
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
+import AvatarInput from './AvatarInput';
+
 import { Container } from './styles';
 
 export default function Profile() {
@@ -27,6 +29,7 @@ export default function Profile() {
   return (
     <Container>
       <form onSubmit={formik.handleSubmit}>
+        <AvatarInput name="avatar_id" />
         <input
           name="name"
           placeholder="Nome completo"

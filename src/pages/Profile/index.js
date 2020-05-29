@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 // import * as Yup from 'yup';
 
+import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
 import AvatarInput from './AvatarInput';
@@ -25,6 +26,10 @@ export default function Profile() {
       dispatch(updateProfileRequest(values));
     },
   });
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
 
   return (
     <Container>
@@ -69,7 +74,9 @@ export default function Profile() {
         <button type="submit">Atualizar Perfil</button>
       </form>
 
-      <button type="button">Sair do GoBarber</button>
+      <button type="button" onClick={handleSignOut}>
+        Sair do GoBarber
+      </button>
     </Container>
   );
 }

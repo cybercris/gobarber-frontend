@@ -39,6 +39,7 @@ This app features all the latest tools and practices in web development!
 - 🌸 **Reactotron** - Helps debugging process
 - 💖 **Lint** — ESlint/Prettier/Editor Config
 - 🌌 **Formik with Yup** — Handle input validation
+- 📅 **Date-fns** — Date config
 
 ## :arrow_forward: Getting starteds
 

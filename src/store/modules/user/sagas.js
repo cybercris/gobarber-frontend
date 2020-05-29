@@ -21,6 +21,8 @@ export function* updateProfile({ payload }) {
     toast.success('Perfil atualizado com sucesso');
 
     yield put(updateProfileSuccess(response.data));
+    console.log(profile);
+    console.log(avatar_id);
   } catch (error) {
     toast.error('Erro ao atualizar perfil, confira seus dados!');
 

@@ -1,26 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useField } from '@rocketseat/unform';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import api from '~/services/api';
 
 import { Container } from './styles';
 
-function AvatarInput() {
-  const { defaultValue, registerField } = useField('avatar');
+export default function AvatarInput({ formik }) {
+  const [preview, setPreview] = useState();
 
-  const [file, setFile] = useState(defaultValue && defaultValue.id);
-  const [preview, setPreview] = useState(defaultValue && defaultValue.url);
-
-  const ref = useRef();
+  const profile = useSelector((state) => state.user.profile);
 
   useEffect(() => {
-    if (ref.current) {
-      registerField({
-        name: 'avatar_id',
-        ref: ref.current,
-        path: 'dataset.file',
-      });
-    }
-  }, [ref, registerField]);
+    setPreview(profile.avatar.url);
+  }, [profile.avatar.url]);
 
   async function handleChange(e) {
     const data = new FormData();
@@ -31,13 +24,13 @@ function AvatarInput() {
 
     const { id, url } = response.data;
 
-    setFile(id);
     setPreview(url);
+    formik.setFieldValue('avatar_id', id);
   }
 
   return (
     <Container>
-      <label htmlFor="avatar">
+      <label htmlFor="avatar_id">
         <img
           src={
             preview || 'https://api.adorable.io/avatars/50/abott@adorable.png'
@@ -47,15 +40,16 @@ function AvatarInput() {
 
         <input
           type="file"
-          id="avatar"
+          id="avatar_id"
+          name="avatar_id"
           accept="image/*"
-          data-file={file}
           onChange={handleChange}
-          ref={ref}
         />
       </label>
     </Container>
   );
 }
 
-export default AvatarInput;
+AvatarInput.propTypes = {
+  formik: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};

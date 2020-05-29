@@ -29,7 +29,7 @@ export default function Profile() {
   return (
     <Container>
       <form onSubmit={formik.handleSubmit}>
-        <AvatarInput name="avatar_id" />
+        <AvatarInput formik={formik} />
         <input
           name="name"
           placeholder="Nome completo"

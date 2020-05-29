@@ -39,9 +39,8 @@ This app features all the latest tools and practices in web development!
 - 🌸 **Reactotron** - Helps debugging process
 - 💖 **Lint** — ESlint/Prettier/Editor Config
 - 🌌 **Formik with Yup** — Handle input validation
-- 👨‍🔧 **Unform** - Handle input file + preview
 
-## :arrow_forward: Getting started
+## :arrow_forward: Getting starteds
 
 Before you run this application you need to make sure the server is running!.
 
